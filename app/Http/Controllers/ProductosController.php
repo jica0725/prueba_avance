@@ -15,10 +15,18 @@ class ProductosController extends Controller
     {
         $productos = Productos::with('bodega')->get();
 
+        $productos_contar = [
+            'total' => $productos->count(),
+            'activos' => $productos->where('estado',1)->count(),
+            'inactivos' => $productos->where('estado',2)->count(),
+            'pendientes' => $productos->where('estado',3)->count(),
+        ];
+
         $bodegas = Bodegas::withCount('productos')->get();
         return [
             "productos" => $productos,
             "bodegas" => $bodegas,
+            'productos_contar' => $productos_contar
         ];
     }
 

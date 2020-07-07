@@ -8,6 +8,7 @@ class Productos extends Model
 {
     protected $table = "productos";
     protected $guarded = [];
+    public $timestamps = false;
 
     /**
      * relacion con la tabla bodega

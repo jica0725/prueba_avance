@@ -15,6 +15,7 @@ $config = [
   <title>{{ config('app.name') }}</title>
 
   <link rel="stylesheet" href="{{ mix('dist/css/app.css') }}">
+  <link rel="stylesheet" href="/fontello/css/fontello.css">
 <body>
   <div id="app"></div>
 
